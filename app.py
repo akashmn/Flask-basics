@@ -6,9 +6,14 @@ app = Flask(__name__)
 def index():
     return '<h1>Home page</h1>'
 
-@app.route('/about')
+@app.route('/about', methods=['POST', 'GET'])
 def about():
-    return '<h1>About Page</h1>'
+    if request.method == 'POST':
+        return '<h1>about page - POST</h1>'
+    elif request.method == 'GET':
+        return '<h1>about page - GET</h1>'
+    else:
+        return '<h1>about page</h1>'
 
 @app.route('/contact')
 def contact():
