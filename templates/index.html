@@ -9,5 +9,11 @@
     <p>flask app - index.html</p>
     <p>{{ val }}</p>
     <p>{{ result }}</p>
-</body>
+    <p>data 👇</p>
+    <ul>
+        {% for item in list %}
+            <li>{{ item }}</li>
+        {% endfor %}
+    </ul>
+    </body>
 </html>

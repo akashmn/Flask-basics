@@ -6,7 +6,8 @@ app = Flask(__name__, template_folder='templates')
 def index():
     myval = 'Hello World'
     myresult = 10 + 20
-    return render_template('index.html', val=myval, result=myresult)
+    mylist = [1, 2, 3, 4, 5]
+    return render_template('index.html', val=myval, result=myresult, list=mylist)
 
 @app.route('/about', methods=['POST', 'GET'])
 def about():
