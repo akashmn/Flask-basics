@@ -4,7 +4,9 @@ app = Flask(__name__, template_folder='templates')
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    myval = 'Hello World'
+    myresult = 10 + 20
+    return render_template('index.html', val=myval, result=myresult)
 
 @app.route('/about', methods=['POST', 'GET'])
 def about():
