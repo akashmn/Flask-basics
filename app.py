@@ -9,6 +9,10 @@ def index():
     mylist = [1, 2, 3, 4, 5]
     return render_template('index.html', val=myval, result=myresult, list=mylist)
 
+@app.route('/index2')
+def other():
+    return render_template('index2.html')
+
 @app.route('/about', methods=['POST', 'GET'])
 def about():
     if request.method == 'POST':
