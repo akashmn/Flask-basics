@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, request
 
 app = Flask(__name__)
 
@@ -25,6 +25,19 @@ def user(name):
 @app.route('/user/<int:id1>/<int:id2>')
 def add(id1, id2):
     return f'<h1>{id1} + {id2} = {id1 + id2}</h1>'
+
+
+@app.route('/handle_params')
+def handle_params():
+    if 'greetings' in request.args and 'name' in request.args:
+        var1 = request.args['greetings']
+        var2 = request.args['name']
+        return f'<h1>{var1}, {var2}</h1>'
+    else:
+        return '<h1>Required parameters are missing!!</h1>'
+        
+
+
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', port=5000, debug=True) 
