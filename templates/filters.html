@@ -1,0 +1,26 @@
+{% block title %} Filter page{% endblock %}
+
+{% block content %}
+
+    <p><u>Filters 👇</u></p>
+    <p>1. {{ str }}</p>
+    <p>2. {{ str | capitalize }}</p> <!-- Capitalize the first letter of the string -->
+    <p>3. {{ str | lower }}</p> <!-- Convert the string to lowercase -->
+    <p>4. {{ str | upper }}</p> <!-- Convert the string to uppercase -->
+    <p>5. {{ str | title }}</p> <!-- Convert the string to title case -->
+    <p>6. {{ str | striptags }}</p> <!-- Remove HTML tags from the string -->
+    <p>7. {{ str | safe }}</p> <!-- Mark the string as safe HTML -->
+    <p>8. {{ str | length }}</p> <!-- Get the length of the string -->
+    <p>9. {{ str | reverse }}</p> <!-- Reverse the string -->
+    <p>10. {{ str | replace('l', 'x') }}</p> <!-- Replace a substring with another substring -->
+    <p>11. {{ str | default('default value') }}</p> <!-- Set a default value if the string is empty -->
+    <p>12. {{ str | escape }}</p> <!-- Escape the string -->
+    <p>13. {{ str | upper | reverse }}</p> <!-- Chaining filters Upper and Reverse -->
+
+    <p><u>Filters with arguments 👇</u></p>
+    <p>14. {{ str | truncate(5) }}</p> <!-- Truncate the string to a given length -->
+    <p>15. {{ str | truncate(5, '...') }}</p> <!-- Truncate the string to a given length and add a suffix -->
+    <p>16. {{ str | replace('l', 'x', 1) }}</p> <!-- Replace a substring with another substring a given number of times -->
+    <p>17. {{ str | replace('l', 'x', 1) | reverse }}</p> <!-- Chaining filters Replace and Reverse -->
+
+{% endblock %}
