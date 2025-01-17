@@ -23,4 +23,10 @@
     <p>16. {{ str | replace('l', 'x', 1) }}</p> <!-- Replace a substring with another substring a given number of times -->
     <p>17. {{ str | replace('l', 'x', 1) | reverse }}</p> <!-- Chaining filters Replace and Reverse -->
 
+    <p><u>Custom filters 👇</u></p
+    <p>18. {{ str | alternate_uppercase }}</p> <!-- Custom filter to convert the string to alternate uppercase -->
+    <p>19. {{ str | alternate_uppercase | reverse }}</p> <!-- Chaining filters Alternate Uppercase and Reverse -->
+    <p>20. {{ str | repeat }}</p> <!-- Custom filter to repeat the string default value -->
+    <p>21. {{ str | repeat(3) }}</p> <!-- Custom filter to repeat the string a given number of times -->
+
 {% endblock %}

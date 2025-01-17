@@ -14,6 +14,20 @@ def filters():
     mystring = 'Hello World'
     return render_template('filters.html', str=mystring)
 
+@app.template_filter('alternate_uppercase')
+def alternate_uppercase(s):
+    result = ''
+    for i in range(len(s)):
+        if i % 2 == 0:
+            result += s[i].upper()
+        else:
+            result += s[i]
+    return result
+
+@app.template_filter('repeat')
+def repeat(s, times=2):
+    return s * times
+
 @app.route('/about', methods=['POST', 'GET'])
 def about():
     if request.method == 'POST':
